@@ -1,6 +1,7 @@
 const http = require('http')
 const myServer = http.createServer((req,res)=>{
   console.log("recieve req.")
-  res.end("Server end")
+  res.end("Hello from server")
 })
-myServer.listen(8000,()=>console.log("server started at port 8000"))
+const port = 8000
+myServer.listen(port,()=>console.log(`server started at port ${port}`))
