@@ -1,3 +1,14 @@
+[{
+  "id":"1",
+  "name":"harsh",
+  "email":"h@gmail.com",
+  "gender":"male",
+  "job":"SDE"
+},
 {
-  
-}
+  "id":"2",
+  "name":"Aman",
+  "email":"A@gmail.com",
+  "gender":"male",
+  "job":"SDE"
+}]
