@@ -1,5 +1,6 @@
 import express from "express";
 // it is plain data file
+import fs from "fs"
 
 import users from "./MOCK_DATA.json" with { type: "json" };
 
@@ -25,8 +26,14 @@ app
   .patch((req,res)=>{})
   .post((req,res)=>{
     const body = req.body
-    console.log("Body",body)
-    return res.json({status:"User registered"})
+    const newUser = { 
+        id: (users.length + 1).toString(), 
+        ...body 
+    };
+    users.push(newUser)
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
+        return res.status(201).json({ status: "User registered", id: newUser.id });
+    });
   })
 
 
